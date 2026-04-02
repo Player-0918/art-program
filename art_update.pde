@@ -1,13 +1,15 @@
-
 color red = #FF0000;
 color blue = #00CEFF;
 color green = #10FF00;
 color yellow = #FAFF00;
 color darkGrey = #6C6C6C;
 color white = #FFFFFF;
+color back = #02AFD8;
 
 //variable for color selection
 color select;
+
+float slider;
 
 void setup()
 {
@@ -15,11 +17,12 @@ void setup()
   strokeWeight(6);
   stroke(darkGrey);
   select = darkGrey;
+  slider = 650;
 }
 
 void draw()
 {
-
+  background(back);
   // buttons for colors
   tactile(100,60,50);
   Button (blue, 100, 60, 100);
@@ -36,6 +39,12 @@ void draw()
   //canvas
   fill(select);
   square(200, 150, 500);
+  
+  
+  fill(0);
+  line(650,60,850,60);
+  noStroke();
+  circle(slider, 60,30);
 }
 
 
@@ -67,6 +76,24 @@ void mouseReleased()
   if(dist(550,60,mouseX,mouseY)<50)
   {
     select = green;
+  }
+  
+  controlSlider();
+  
+}
+
+
+void mouseDragged()
+{
+  controlSlider();
+}
+
+
+void controlSlider()
+{
+  if(mouseX>650 && mouseX<850)
+  {
+    slider = mouseX;
   }
 }
 
