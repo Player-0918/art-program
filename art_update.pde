@@ -43,7 +43,7 @@ void draw()
   
   fill(0);
   line(650,60,850,60);
-  noStroke();
+  //noStroke();
   circle(slider, 60,30);
 }
 
@@ -53,7 +53,7 @@ void mouseReleased()
   if(dist(100,60,mouseX,mouseY) < 100)
   {
     select = yellow;
-    noStroke();
+    //noStroke();
   }
   
  
