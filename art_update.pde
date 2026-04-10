@@ -37,6 +37,7 @@ void draw()
   Button (green, 550, 60, 100);
 
   //canvas
+  stroke(darkGrey);
   fill(select);
   square(200, 150, 500);
   
@@ -102,10 +103,10 @@ void tactile(int x, int y, int r)
 {
   if (dist(x,y,mouseX,mouseY)<r)
   {
-    stroke(white);
-    noStroke();
+    //noStroke();
     noFill();
     square(200, 150, 500);
+    stroke(white);
   }
   else
   {
