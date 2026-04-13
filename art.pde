@@ -63,11 +63,7 @@ void draw()
   tactile(800,245,60);
   Eraser(white, 800, 200,50,50);
   //canvas
-  stroke(darkGrey);
-  fill(255);
-  square(200, 150, 500);
-  
-  
+ 
   fill(0);
   line(650,60,850,60);
   //noStroke();
@@ -142,7 +138,6 @@ void tactile(int x, int y, int r)
   {
     //noStroke();
     noFill();
-    square(200, 150, 500);
     stroke(white);
   }
   else
