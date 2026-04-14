@@ -11,6 +11,8 @@ color orange = #FF9900;
 color crimson = #B40F0F;
 float width = 6;
 PImage op;
+PImage nar;
+PImage clod;
 
 //variable for color selection
 color select;
@@ -26,14 +28,19 @@ void setup()
   select = darkGrey;
   slider = 650;
   op = loadImage("op.png");
+  nar = loadImage("naruto.png");
+  clod = loadImage("980.png");
+  
+  
  
 }
 
 void draw()
 {
   background(back);
-  image(op, 800,400);
-  
+  image(op, 770,300,120,70);
+  image(nar, 785,400,90,70);
+  image(clod,785,480,90,70);
   // buttons for colors
   strokeWeight(7);
   tactile(100,60,50);
@@ -63,7 +70,7 @@ void draw()
   tactile(800,245,60);
   Eraser(white, 800, 200,50,50);
   //canvas
- 
+  fill(0);
   fill(0);
   line(650,60,850,60);
   //noStroke();
