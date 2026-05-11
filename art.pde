@@ -73,6 +73,9 @@ void draw()
   tactile(800,245,60);
   Eraser(back, 800, 200,50,50);
   //canvas
+  
+  
+  
   noStroke();
   fill(back);
   rect(630,35,250,50);
@@ -86,6 +89,7 @@ void draw()
   stroke(black);
   strokeWeight(width);
   line(650,100,850,100);
+  
 }
 
 
