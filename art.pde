@@ -13,6 +13,8 @@ float width = 6;
 PImage op;
 PImage nar;
 PImage clod;
+boolean on = false;
+PImage select1;
 
 //variable for color selection
 color select;
@@ -30,15 +32,16 @@ void setup()
   op = loadImage("op.png");
   nar = loadImage("naruto.png");
   clod = loadImage("980.png");
-  
-  
+  background(back);
+  on = false;
  
 }
 
 void draw()
 {
-  background(back);
-  image(op, 770,300,120,70);
+  tactile1(770,300,120,70);
+  image(op, 770,300,120,70); 
+  tactile1(785,400,90,70);  
   image(nar, 785,400,90,70);
   image(clod,785,480,90,70);
   // buttons for colors
@@ -68,10 +71,14 @@ void draw()
   Button(orange,100,650,100);
   
   tactile(800,245,60);
-  Eraser(white, 800, 200,50,50);
+  Eraser(back, 800, 200,50,50);
   //canvas
+  noStroke();
+  fill(back);
+  rect(630,35,250,50);
   fill(0);
   fill(0);
+  stroke(darkGrey);
   line(650,60,850,60);
   //noStroke();
   circle(slider, 60,30);
@@ -84,36 +91,83 @@ void draw()
 
 void mouseReleased()
 {
+  
   if(dist(100,60,mouseX,mouseY) < 50)
   {
     select = yellow;
+    on = false;
     //noStroke();
   }
  
   if(dist(100,60,mouseX,mouseY)<50)
   {
     select = blue;
+    on = false;
   }
   
   if(dist(250,60,mouseX,mouseY)<50)
   {
     select = red;
+    on = false;
   }
   
   if(dist(400,60,mouseX,mouseY)<50)
   {
     select = yellow;
+    on = false;
   }
   
   if(dist(550,60,mouseX,mouseY)<50)
   {
     select = green;
+    on = false;
+  }
+  
+  if(dist(100,200,mouseX,mouseY)<50)
+  {
+    select = crimson;
+  }
+  
+  if(dist(100,350,mouseX,mouseY)<50)
+  {
+    select = black;
+  }
+  
+  if(dist(100,450,mouseX,mouseY)<50)
+  {
+    select = purple;
+  }
+  
+  if(dist(100,650,mouseX,mouseY)<50)
+  {
+    select = orange;
   }
   
  if(dist(800,200,mouseX,mouseY)<50)
   {
-    select = white;
+    select = back;
   }
+  
+ if(dist(830,330,mouseX,mouseY)<50)
+  {
+    on = !on;
+    select1 = op;
+  }
+  
+  if(dist(830,430,mouseX,mouseY)<50)
+  {
+    on = !on;
+    select1 = nar;
+  }
+  
+  if(dist(830,530,mouseX,mouseY)<50)
+  {
+    on = !on;
+    select1 = clod;
+  }
+  
+  
+
   
   controlSlider();
   
@@ -122,9 +176,16 @@ void mouseReleased()
 
 void mouseDragged()
 {
-  controlSlider();
-  stroke(select);
-  line(pmouseX,pmouseY,mouseX,mouseY);
+  if (on == false)
+  {
+    controlSlider();
+    stroke(select);
+    line(pmouseX,pmouseY,mouseX,mouseY);
+  }
+  else
+  {
+ image(select1,mouseX,mouseY,100,100);
+  }
 }
 
 
@@ -167,3 +228,14 @@ void Eraser (color i, int x, int y, int z, int w)
   rect(x,y,z,w);
 }
 
+void tactile1(int x, int y, int w, int h)
+{
+  if(mouseX > x && mouseX < x+w && mouseY > y && mouseY < y+w)
+  {
+    fill(255,255,0);
+  }
+  else
+  {
+    fill(255);
+  }
+}
