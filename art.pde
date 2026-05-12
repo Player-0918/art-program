@@ -35,15 +35,23 @@ void setup()
   background(back);
   on = false;
  
+ 
 }
 
 void draw()
-{
+{ 
+  noStroke();
+  fill(black);
+  rect(800,590,50,50);
   tactile1(770,300,120,70);
   image(op, 770,300,120,70); 
   tactile1(785,400,90,70);  
   image(nar, 785,400,90,70);
   image(clod,785,480,90,70);
+  noStroke();
+  fill(#022FA7);
+  rect(30,0,150,1500);
+  rect(30,0,1500,150);
   // buttons for colors
   strokeWeight(7);
   tactile(100,60,50);
@@ -73,11 +81,10 @@ void draw()
   tactile(800,245,60);
   Eraser(back, 800, 200,50,50);
   //canvas
-  
-  
+
   
   noStroke();
-  fill(back);
+  fill(#022FA7);
   rect(630,35,250,50);
   fill(0);
   fill(0);
@@ -171,7 +178,10 @@ void mouseReleased()
   }
   
   
-
+  if(dist(800,590,mouseX,mouseY)<50)
+  {
+    background(back);
+  }
   
   controlSlider();
   
