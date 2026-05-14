@@ -40,18 +40,27 @@ void setup()
 
 void draw()
 { 
+  
   noStroke();
-  fill(black);
-  rect(800,590,50,50);
+  fill(#022FA7);
+  rect(0,0,200,1500);
+  rect(30,0,1500,150);
+  rect(30,650,1500,150);
+  rect(750,30,150,1500);
   tactile1(770,300,120,70);
   image(op, 770,300,120,70); 
   tactile1(785,400,90,70);  
   image(nar, 785,400,90,70);
   image(clod,785,480,90,70);
-  noStroke();
-  fill(#022FA7);
-  rect(30,0,150,1500);
-  rect(30,0,1500,150);
+  fill(250);
+  rect(290,660,100,30);
+  rect(490,660,100,30);
+  rect(690,660,100,30);
+  fill(0);
+  textSize(30);
+  text("SAVE", 300,685);
+  text("LOAD",500,685);
+  text("CLEAR", 700,685);
   // buttons for colors
   strokeWeight(7);
   tactile(100,60,50);
@@ -178,14 +187,28 @@ void mouseReleased()
   }
   
   
-  if(dist(800,590,mouseX,mouseY)<50)
+  if(dist(690,660,mouseX,mouseY)<50)
   {
     background(back);
   }
   
+  if(dist(290,660,mouseX,mouseY)<50)
+  {
+    selectOutput("save your drawing", "saveImage");
+  }
+  
+  if(dist(490,660,mouseX,mouseY)<50)
+  {
+    selectOutput("load an image", "openImage");
+  }
+  
+
+  
   controlSlider();
   
 }
+
+
 
 
 void mouseDragged()
