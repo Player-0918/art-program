@@ -108,6 +108,7 @@ void draw()
   
 }
 
+
 void mouseReleased()
 {
   
@@ -201,9 +202,13 @@ void mouseReleased()
     selectOutput("load an image", "openImage");
   }
   
+
+  
   controlSlider();
   
 }
+
+
 
 
 void mouseDragged()
@@ -245,6 +250,7 @@ void tactile(int x, int y, int r)
     stroke(darkGrey);
   }
 }
+
 
 
 void Button(color i, int x, int y, int z)
