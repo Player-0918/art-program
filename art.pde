@@ -15,11 +15,14 @@ PImage nar;
 PImage clod;
 boolean on = false;
 PImage select1;
+color color1 = #00FFCA;
+color color2 = #00FFCA;
+color color3 = #00FFCA;
 
 //variable for color selection
 color select;
 
-float slider;
+float slider;`
 
 void setup()
 {
@@ -40,16 +43,24 @@ void setup()
 
 void draw()
 { 
-  
   noStroke();
   fill(#022FA7);
   rect(0,0,200,1500);
   rect(30,0,1500,150);
   rect(30,650,1500,150);
   rect(750,30,150,1500);
+  noStroke();
+  fill(color2);
+  rect(790,400,80,70);
+  noStroke();
+  fill(color1);
+  rect(790,300,80,70);
   tactile1(770,300,120,70);
   image(op, 770,300,120,70); 
-  tactile1(785,400,90,70);  
+  noStroke();
+  fill(color3);
+  rect(790,490,80,70);
+  tactile1(785,400,90,70);
   image(nar, 785,400,90,70);
   image(clod,785,480,90,70);
   fill(250);
@@ -89,6 +100,8 @@ void draw()
   
   tactile(800,245,60);
   Eraser(back, 800, 200,50,50);
+  
+  
   //canvas
 
   
@@ -102,7 +115,7 @@ void draw()
   //noStroke();
   circle(slider, 60,30);
   
-  stroke(black);
+  stroke(select);
   strokeWeight(width);
   line(650,100,850,100);
   
@@ -186,6 +199,17 @@ void mouseReleased()
     select1 = clod;
   }
   
+  if(dist(770,300,mouseX,mouseY)<50)
+  {
+    color1 = red;
+  }
+  
+  if(dist(785,400,mouseX,mouseY)<50)
+  {
+    color2 = red;
+  }
+  
+  
   
   if(dist(690,660,mouseX,mouseY)<50)
   {
@@ -199,7 +223,7 @@ void mouseReleased()
   
   if(dist(490,660,mouseX,mouseY)<50)
   {
-    selectOutput("load an image", "openImage");
+    selectInput("load an image", "openImage");
   }
   
 
