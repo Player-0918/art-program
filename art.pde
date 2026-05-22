@@ -15,9 +15,9 @@ PImage nar;
 PImage clod;
 boolean on = false;
 PImage select1;
-color color1 = #00FFCA;
-color color2 = #00FFCA;
-color color3 = #00FFCA;
+color color1 = red;
+color color2 = red;
+color color3 = red;
 
 //variable for color selection
 color select;
@@ -43,8 +43,8 @@ void setup()
 
 void draw()
 { 
-  noStroke();
   fill(#022FA7);
+  noStroke();
   rect(0,0,200,1500);
   rect(30,0,1500,150);
   rect(30,650,1500,150);
@@ -102,6 +102,7 @@ void draw()
   Eraser(back, 800, 200,50,50);
   
   
+
   //canvas
 
   
@@ -201,12 +202,38 @@ void mouseReleased()
   
   if(dist(770,300,mouseX,mouseY)<50)
   {
-    color1 = red;
+    if(on)
+    {
+    color1 = green;
+    }
+    else
+    {
+      color1 = red;
+    }
   }
   
   if(dist(785,400,mouseX,mouseY)<50)
   {
-    color2 = red;
+    if(on)
+    {
+    color2 = green;
+    }
+    else
+    {
+      color2 = red;
+    }
+  }
+  
+  if(dist(785,480,mouseX,mouseY)<50)
+  {
+    if(on)
+    {
+    color3 = green;
+    }
+    else
+    {
+      color3 = red;
+    }
   }
   
   
