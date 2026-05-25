@@ -9,7 +9,7 @@ color black = #050505;
 color purple = #9400FF;
 color orange = #FF9900;
 color crimson = #B40F0F;
-float width = 6;
+int width = 6;
 PImage op;
 PImage nar;
 PImage clod;
@@ -101,6 +101,9 @@ void draw()
   tactile(800,245,60);
   Eraser(back, 800, 200,50,50);
   
+  tactile1(770,300,120,70);
+  tactile1(785,400,90,70);
+  tactile1(785,480,90,70);
   
 
   //canvas
@@ -259,7 +262,28 @@ void mouseReleased()
   
 }
 
+void saveImage(File f)
+{
+  if(f != null)
+  {
+    PImage canvas = get(   71,1,width-71,height-1);
+    canvas.save(f.getAbsolutePath());
+  }
+}
 
+void openImage(File f)
+{
+  if(f!=null)
+  {
+    int n = 0;
+    while(n<10)
+    {
+      PImage pic = loadImage(f.getPath());
+      image(pic,0,0);
+      n++;
+    }
+  }
+}
 
 
 void mouseDragged()
@@ -284,7 +308,7 @@ void controlSlider()
   {
     slider = mouseX;
   }
-  width = map(slider,650,850, 0,50);
+  width = (int)map(slider,650,850, 0,50);
 }
 
 
