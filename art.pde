@@ -64,15 +64,24 @@ void draw()
   tactile1(785,400,90,70);
   image(nar, 785,400,90,70);
   image(clod,785,480,90,70);
+  
+
   stroke(250);
   strokeWeight(stoke);
-  fill(250);
+  
+  tactile1(290,660,100,30);
   rect(290,660,100,30);
-  rect(490,660,100,30);
-  rect(690,660,100,30);
   fill(0);
-  textSize(30);
   text("SAVE", 300,685);
+  
+  tactile1(490,660,100,30);
+  rect(490,660,100,30);
+  tactile1(690,660,100,30);
+  rect(690,660,100,30);
+  
+  
+  textSize(30);
+  fill(0);
   text("LOAD",500,685);
   text("CLEAR", 700,685);
   // buttons for colors
