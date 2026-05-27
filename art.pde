@@ -18,11 +18,12 @@ PImage select1;
 color color1 = red;
 color color2 = red;
 color color3 = red;
+final int stoke = 15;
 
 //variable for color selection
 color select;
 
-float slider;`
+float slider;
 
 void setup()
 {
@@ -63,6 +64,8 @@ void draw()
   tactile1(785,400,90,70);
   image(nar, 785,400,90,70);
   image(clod,785,480,90,70);
+  stroke(250);
+  strokeWeight(stoke);
   fill(250);
   rect(290,660,100,30);
   rect(490,660,100,30);
@@ -266,7 +269,7 @@ void saveImage(File f)
 {
   if(f != null)
   {
-    PImage canvas = get(   71,1,width-71,height-1);
+    PImage canvas = get(200,200,550,450);
     canvas.save(f.getAbsolutePath());
   }
 }
