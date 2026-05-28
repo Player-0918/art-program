@@ -18,6 +18,9 @@ PImage select1;
 color color1 = red;
 color color2 = red;
 color color3 = red;
+color selecty = red;
+color selecty1 = red;
+color selecty2 = red;
 final int stoke = 15;
 
 //variable for color selection
@@ -60,18 +63,24 @@ void draw()
   
   
   noStroke();
+  fill(selecty);
+  rect(780,290,100,90);
   tactile1(770,300,120,70);
   rect(790,300,80,70);
   image(op, 770,300,120,70); 
   
   
   noStroke();
+    fill(selecty1);
+  rect(780,390,100,90);
   tactile1(785,400,90,70);
   rect(790,400,80,70);
   image(nar, 785,400,90,70);
   
   
   noStroke();
+    fill(selecty2);
+  rect(780,490,100,90);
   tactile1(790,480,80,70);
   rect(790,490,80,70);
   image(clod,785,480,90,70);
@@ -230,37 +239,40 @@ void mouseReleased()
   
   if(dist(770,300,mouseX,mouseY)<50)
   {
+    on=!on;
     if(on)
     {
-    color1 = green;
+    selecty = green;
     }
     else
     {
-      color1 = red;
+      selecty = red;
     }
   }
   
   if(dist(785,400,mouseX,mouseY)<50)
   {
+    on=!on;
     if(on)
     {
-    color2 = green;
+    selecty1 = green;
     }
     else
     {
-      color2 = red;
+      selecty1 = red;
     }
   }
   
   if(dist(785,480,mouseX,mouseY)<50)
   {
+    on=!on;
     if(on)
     {
-    color3 = green;
+    selecty2 = green;
     }
     else
     {
-      color3 = red;
+      selecty2 = red;
     }
   }
   
