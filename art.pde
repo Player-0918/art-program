@@ -51,19 +51,32 @@ void draw()
   rect(30,650,1500,150);
   rect(750,30,150,1500);
   noStroke();
-  fill(color2);
-  rect(790,400,80,70);
-  noStroke();
-  fill(color1);
-  rect(790,300,80,70);
-  tactile1(770,300,120,70);
-  image(op, 770,300,120,70); 
-  noStroke();
-  fill(color3);
+  
+  
+
+  
   rect(790,490,80,70);
+
+  
+  
+  noStroke();
+  tactile1(770,300,120,70);
+  rect(790,300,80,70);
+  image(op, 770,300,120,70); 
+  
+  
+  noStroke();
   tactile1(785,400,90,70);
+  rect(790,400,80,70);
   image(nar, 785,400,90,70);
+  
+  
+  noStroke();
+  tactile1(790,480,80,70);
+  rect(790,490,80,70);
   image(clod,785,480,90,70);
+  
+  
   
 
   stroke(250);
